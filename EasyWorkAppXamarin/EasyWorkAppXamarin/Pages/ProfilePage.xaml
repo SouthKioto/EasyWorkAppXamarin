@@ -1,0 +1,122 @@
+﻿<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EasyWorkAppXamarin.Pages.ProfilePage"
+             xmlns:local="clr-namespace:EasyWorkAppXamarin.Pages"
+             NavigationPage.HasNavigationBar="False">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="240"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <StackLayout Grid.Column="1" Grid.Row="0" Grid.RowSpan="2" Padding="20" Spacing="20">
+            <Button Text="Edit Profile" Clicked="EditUserProfileButton" 
+                    BorderColor="Black"
+                    BorderWidth="1.5"
+                    CornerRadius="50"
+                    FontSize="10"
+                    FontAttributes="Bold"
+                    TextColor="Black"
+                    BackgroundColor="Transparent"
+                    VerticalOptions="Center"/>
+
+            <Button Text="Delete Profile"  
+                    BorderColor="Black"
+                    BorderWidth="1.5"
+                    CornerRadius="50"
+                    FontSize="10"
+                    FontAttributes="Bold"
+                    TextColor="Black"
+                    BackgroundColor="Transparent"
+                    VerticalOptions="Center"/>
+
+            <Button Text="Add Advertisment" Clicked="AddNewAdvertisment"
+                    BorderColor="Black"
+                    BorderWidth="1.5"
+                    CornerRadius="50"
+                    FontSize="10"
+                    FontAttributes="Bold"
+                    TextColor="Black"
+                    BackgroundColor="Transparent"
+                    VerticalOptions="Center"/>
+
+            <Button Text="LogOut" Clicked="LogOut"
+                    BorderColor="Black"
+                    BorderWidth="1.5"
+                    CornerRadius="50"
+                    FontSize="10"
+                    FontAttributes="Bold"
+                    TextColor="Black"
+                    BackgroundColor="Transparent"
+                    VerticalOptions="Center"/>
+
+            <Button Text="Back to Main Page" Clicked="BackToMainFromProfile"
+                    BorderColor="Black"
+                    BorderWidth="1.5"
+                    CornerRadius="50"
+                    FontSize="10"
+                    FontAttributes="Bold"
+                    TextColor="Black"
+                    BackgroundColor="Transparent"
+                    VerticalOptions="Center"/>
+        </StackLayout>
+
+        <ScrollView HeightRequest="2000" Grid.Column="0" Grid.Row="0">
+            <StackLayout Padding="20" Spacing="20">
+
+                <Label Text="About you" TextColor="Black" FontSize="40" HorizontalOptions="Center"/>
+
+                <Label FontSize="20" Text="Name and Surname:"/>
+                <Label x:Name="nameSurname_label" FontAttributes="Bold"/>
+
+                <Label FontSize="20" Text="Age:"/>
+                <Label x:Name="age_label" FontAttributes="Bold"/>
+
+                <Label FontSize="20" Text="Email:"/>
+                <Label x:Name="email_label" FontAttributes="Bold"/>
+
+                <Label FontSize="20" Text="Telephone Number:"/>
+                <Label x:Name="tel_number_label" FontAttributes="Bold"/>
+
+                <Label FontSize="20" Text="Residence:"/>
+                <Label x:Name="residence_label" FontAttributes="Bold"/>
+
+                <Label FontSize="20" Text="Current Position:"/>
+                <Label x:Name="currPosition_label" FontAttributes="Bold"/>
+
+                <Label FontSize="20" Text="Current Position Description:"/>
+                <Label x:Name="currPositionDescript_label" FontAttributes="Bold"/>
+
+                <Label FontSize="20" Text="Career Summary:"/>
+                <Label x:Name="careerSummary_label" FontAttributes="Bold"/>
+
+                <Label FontSize="20" Text="Work Experience:"/>
+                <Label x:Name="workExperience_label" FontAttributes="Bold"/>
+
+                <Label FontSize="20" Text="Education:"/>
+                <Label x:Name="education_label" FontAttributes="Bold"/>
+
+                <Label FontSize="20" Text="Language Skills:"/>
+                <Label x:Name="lauguageSkills_label" FontAttributes="Bold"/>
+
+                <Label FontSize="20" Text="Skills:"/>
+                <Label x:Name="skills_label" FontAttributes="Bold"/>
+
+                <Label FontSize="20" Text="Courses:"/>
+                <Label x:Name="courses_label" FontAttributes="Bold"/>
+
+                <Label FontSize="20" Text="Is Admin:"/>
+                <Label x:Name="isAdmin_label" FontAttributes="Bold"/>
+            </StackLayout>
+        </ScrollView>
+        
+
+
+
+    </Grid>
+</ContentPage>

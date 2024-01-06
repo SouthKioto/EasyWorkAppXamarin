@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EasyWorkAppXamarin.MainPage"
+             NavigationPage.HasNavigationBar="False">
+
+    <StackLayout>
+
+        <StackLayout Orientation="Horizontal">
+            <Image x:Name="EasyWorkLogo" Source="EasyWorkLogo.jpg" WidthRequest="100" HorizontalOptions="CenterAndExpand"/>
+
+            <Grid x:Name="UserData"></Grid>
+        </StackLayout>
+        <StackLayout>
+            <Label Text="Find Your Creative Job" TextColor="Black" FontSize="40" FontAttributes="Bold" Margin="15"/>
+            <Label x:Name="UserGreetings" Margin="15" TextColor="Black" FontAttributes="Bold"/>
+
+            <StackLayout Orientation="Horizontal">
+                <SearchBar/>
+                <ImageButton WidthRequest="50" BackgroundColor="Black"/>
+            </StackLayout>
+
+
+        </StackLayout>
+    </StackLayout>
+
+</ContentPage>

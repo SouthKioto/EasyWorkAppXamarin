@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EasyWorkAppXamarin.Pages.EditUserPage">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Padding="20" Spacing="15">
+                <Label Text="Personal Information" FontSize="18" HorizontalOptions="Center" />
+
+                <Entry x:Name="name_entry" Placeholder="Name" />
+                <Entry x:Name="surname_entry" Placeholder="Surname" />
+                <DatePicker x:Name="birth_date_entry" Format="MM/dd/yyyy" />
+                <Entry x:Name="email_entry" Placeholder="Email" />
+                <Entry x:Name="phone_number_entry" Placeholder="Phone number" />
+                <Entry x:Name="residence_place_entry" Placeholder="Residence Place" />
+
+                <Label Text="Work Experience" FontSize="18" HorizontalOptions="Center" />
+
+                <Entry x:Name="curr_position_entry" Placeholder="Current position" />
+                <Entry x:Name="curr_position_descr_entry" Placeholder="Current position description" />
+                <Entry x:Name="career_summary_entry" Placeholder="Career summary" />
+                <Entry x:Name="work_experience_entry" Placeholder="Work experience" />
+                <Entry x:Name="education_entry" Placeholder="Education" />
+                <Entry x:Name="launguage_skills_entry" Placeholder="Laugage Skills" />
+                <Entry x:Name="skills_entry" Placeholder="Skills" />
+                <Entry x:Name="courses_entry" Placeholder="Courses" />
+
+                <Label Text="Account Settings" FontSize="18" HorizontalOptions="Center" />
+
+                <Entry x:Name="password_entry" Placeholder="Password" />
+                <Entry x:Name="IsAdmin_entry" IsVisible="false" />
+
+                <Button Text="Save data" Clicked="UpdateDataEditPageClick" 
+                        HorizontalOptions="Center" 
+                        BorderColor="Black"
+                        BorderWidth="1.5"
+                        CornerRadius="50"
+                        TextColor="Black"
+                        BackgroundColor="Transparent"
+                        VerticalOptions="Center"/>
+
+                <Button Text="Back" Clicked="BackToPreviousPage" 
+                        HorizontalOptions="Center" 
+                        BorderColor="Black"
+                        BorderWidth="1.5"
+                        CornerRadius="50"
+                        TextColor="Black"
+                        BackgroundColor="Transparent"
+                        VerticalOptions="Center"/>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
