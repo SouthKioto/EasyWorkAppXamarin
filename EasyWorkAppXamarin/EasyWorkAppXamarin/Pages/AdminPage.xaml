@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EasyWorkAppXamarin.Pages.AdminPage">
+    <ContentPage.Content>
+        <StackLayout Margin="15">
+            <Label Text="Lista użytkownikow" HorizontalOptions="CenterAndExpand" FontSize="40" TextColor="Black"/>
+
+            <Frame CornerRadius="15"
+                   BorderColor="Black">
+                <CollectionView x:Name="usersList_adminPage">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout Spacing="0" Margin="15" Orientation="Horizontal">
+                                <StackLayout>
+                                    <StackLayout Spacing="5" Orientation="Horizontal">
+                                        <Label Text="{Binding ID, StringFormat='ID: {0}'}" FontAttributes="Bold" TextColor="Black"/>
+                                        <Label Text="{Binding Name}" FontAttributes="Bold" TextColor="Black"/>
+                                        <Label Text="{Binding Surname}" FontAttributes="Bold" TextColor="Black"/>
+                                    </StackLayout>
+                                    <Label Text="{Binding Email, StringFormat='Email: {0}'}" FontAttributes="Bold" TextColor="Black"/>
+                                    <Label Text="{Binding TelNumber, StringFormat='Telefon: {0}'}" FontAttributes="Bold" TextColor="Black"/>
+                                    <Label Text="{Binding IsAdmin, StringFormat='Administrator: {0}'}" FontAttributes="Bold" TextColor="Black"/>
+
+                                </StackLayout>
+
+                                <StackLayout HorizontalOptions="EndAndExpand">
+                                    <Button Text="Usuń" Clicked="DeleteUserClick"/>
+                                    <Button Text="Zmien uprawnienia" FontSize="10" WidthRequest="100" HeightRequest="50" Clicked="ChangeAdminPermits"/>
+                                </StackLayout>
+                            </StackLayout>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </Frame>
+
+
+            <Label Text="Lista ogłoszeń" HorizontalOptions="CenterAndExpand" FontSize="40" TextColor="Black"/>
+            <Frame CornerRadius="15"
+                   BorderColor="Black">
+                <CollectionView x:Name="annoucementList_adminPage">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout Spacing="0" Margin="15" Orientation="Horizontal">
+                                <StackLayout>
+                                    <Label Text="{Binding NotificationId, StringFormat='Id: {0}'}" FontAttributes="Bold" TextColor="Black"/>
+                                    <Label Text="{Binding Notification_title, StringFormat='Tytuł: {0}'}" FontAttributes="Bold" TextColor="Black"/>
+                                    <Label Text="{Binding Notification_descript, StringFormat='Opis: {0}'}" FontAttributes="Bold" TextColor="Black"/>
+
+                                </StackLayout>
+
+                                <StackLayout HorizontalOptions="EndAndExpand">
+                                    <Button Text="Usuń" Clicked="DeleteAnnoucementFromDatabase"/>
+                                </StackLayout>
+                            </StackLayout>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </Frame>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

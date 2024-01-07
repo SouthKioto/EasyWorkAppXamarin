@@ -2,6 +2,7 @@
 using EasyWorkAppXamarin.Pages;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
@@ -13,6 +14,7 @@ namespace EasyWorkAppXamarin
 {
     public partial class MainPage : ContentPage
     {
+        private ObservableCollection<Annoucements> annoucementsCollection;
 
         protected string imie { get; set; }
         protected string nazwisko { get; set; }
@@ -23,12 +25,15 @@ namespace EasyWorkAppXamarin
         public MainPage()
         {
             InitializeComponent();
+            
         }
 
         protected override async void OnAppearing()
         {
             base.OnAppearing();
             UpdateUserUI();
+            annoucementsCollection = new ObservableCollection<Annoucements>(await App.Database.GetAnnoucementsAsync());
+            AllAnnoucementsList_MainPage.ItemsSource = annoucementsCollection;
         }
 
         public void UpdateUserData(Users user, bool IsLogged)
@@ -42,39 +47,20 @@ namespace EasyWorkAppXamarin
 
         public void UpdateUserUI()
         {
-            if (isLogged) 
+            if (isLogged)
             {
-                if (isAdmin)
+                var userButton = new Button
                 {
-                    var adminButton = new Button
-                    {
-                        Text = "Profil",
-                        BackgroundColor = Color.Transparent,
-                        BorderColor = Color.Black,
-                        BorderWidth = 1.5,
-                        CornerRadius = 25,
-                        TextColor = Color.Black,
-                    };
-                    UserData.Children.Add(adminButton);
-                    UserGreetings.Text = "Good Morning " + imie;
-                    adminButton.Clicked += GoToProfilePage;
-                }
-                else
-                {
-                    var userButton = new Button
-                    {
-                        Text = "Profil",
-                        BackgroundColor = Color.Transparent,
-                        BorderColor = Color.Black,
-                        BorderWidth = 1.5,
-                        CornerRadius = 25,
-                        TextColor = Color.Black,
-                    };
-                    UserData.Children.Add(userButton);
-                    UserGreetings.Text = "Good Morning " + imie;
-                    userButton.Clicked += GoToProfilePage;
-                }
-
+                    Text = "Profil",
+                    BackgroundColor = Color.Transparent,
+                    BorderColor = Color.Black,
+                    BorderWidth = 1.5,
+                    CornerRadius = 25,
+                    TextColor = Color.Black,
+                };
+                UserData.Children.Add(userButton);
+                UserGreetings.Text = "Good Morning " + imie;
+                userButton.Clicked += GoToProfilePage;
             }
             else
             {
@@ -101,6 +87,21 @@ namespace EasyWorkAppXamarin
         private void GoToProfilePage(object sender, EventArgs e)
         {
             Navigation.PushAsync(new ProfilePage());
+        }
+
+        private void GoToSearchPage(object sender, EventArgs e)
+        {
+            DisplayAlert("Info", "Opcja w budowie", "ok");
+        }
+
+        private void GoToDetailsPage(object sender, EventArgs e)
+        {
+            var label = (Label)sender;
+
+            var notificationItem = (Annoucements)label.BindingContext;
+
+            Navigation.PushAsync(new DetailsPage(notificationItem));
+
         }
     }
 }

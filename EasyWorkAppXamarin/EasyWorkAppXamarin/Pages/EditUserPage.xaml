@@ -28,7 +28,7 @@
                 <Label Text="Account Settings" FontSize="18" HorizontalOptions="Center" />
 
                 <Entry x:Name="password_entry" Placeholder="Password" />
-                <Entry x:Name="IsAdmin_entry" IsVisible="false" />
+                <Entry x:Name="IsAdmin_entry" IsVisible="true" />
 
                 <Button Text="Save data" Clicked="UpdateDataEditPageClick" 
                         HorizontalOptions="Center" 

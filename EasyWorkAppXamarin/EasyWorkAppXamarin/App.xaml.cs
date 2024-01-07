@@ -19,21 +19,6 @@ namespace EasyWorkAppXamarin
                 if (database == null)
                 {
                     database = new Database(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "EasyWorkDefault.db3"));
-                    var existingUser = Database.GetUserByEmailAsync("admin@gmail.com");
-
-                    if(existingUser == null)
-                    {
-                        var userAdmin = new Users
-                        {
-                            Name = "admin",
-                            Surname = "admin",
-                            Email = "admin@gmail.com",
-                            PasswordHash = "admin",
-                            IsAdmin = true,
-                        };
-
-                        Database.SavePersonAsync(userAdmin);
-                    }
 
                 }
                 return database;

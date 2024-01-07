@@ -16,6 +16,7 @@ namespace EasyWorkAppXamarin.Pages
         public ProfilePage()
         {
             InitializeComponent();
+            CheckAdminPermit(UserManager.CurrentUser);
         }
 
         protected override async void OnAppearing()
@@ -49,7 +50,7 @@ namespace EasyWorkAppXamarin.Pages
 
         private void AddNewAdvertisment(object sender, EventArgs e)
         {
-
+            Navigation.PushAsync(new AddAnnoucement());
         }
 
         private void LogOut(object sender, EventArgs e)
@@ -61,6 +62,31 @@ namespace EasyWorkAppXamarin.Pages
         private void BackToMainFromProfile(object sender, EventArgs e)
         {
             Navigation.PopAsync();
+        }
+
+        private void CheckAdminPermit(Users user)
+        {
+            if(user.IsAdmin == true)
+            {
+                var adminButton = new Button
+                {
+                    Text = "Admin Page",
+                    BackgroundColor = Color.Transparent,
+                    BorderColor = Color.Black,
+                    BorderWidth = 1.5,
+                    CornerRadius = 50,
+                    FontAttributes = FontAttributes.Bold,
+                    TextColor = Color.Black,
+                    VerticalOptions = LayoutOptions.Center,
+                };
+                buttons_stacklayout.Children.Add(adminButton);
+                adminButton.Clicked += GoToAdminPage;
+            }
+        }
+
+        private void GoToAdminPage(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new AdminPage());
         }
     }
 }

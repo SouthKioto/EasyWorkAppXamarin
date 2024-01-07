@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EasyWorkAppXamarin.Pages.AddAnnoucement"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+
+        <ScrollView>
+            <StackLayout Margin="15">
+                <Entry x:Name="title_entry" Placeholder="Announcement title"/>
+                <Entry x:Name="description_entry" Placeholder="Announcement description"/>
+
+                <Entry x:Name="workPosition_entry" Placeholder="WorkPosition"/>
+                <Picker x:Name="workPosition_picker" Title="Select Work Position">
+
+                </Picker>
+
+                <Entry x:Name="jobLevel_entry" Placeholder="Job Level"/>
+                <Picker x:Name="jobLevel_picker">
+
+                </Picker>
+
+                <Entry x:Name="contractType_entry" Placeholder="Contract Type"/>
+                <Picker x:Name="contractType_picker">
+
+                </Picker>
+
+                <Entry x:Name="employmentDimensions_entry" Placeholder="Employment Dimensions"/>
+                <Picker x:Name="employmentDimensions_picker">
+
+                </Picker>
+
+                <Entry x:Name="workType_entry" Placeholder="Work Type"/>
+                <Picker x:Name="workType_picker">
+
+                </Picker>
+
+                <Entry x:Name="salaryStart_entry" Placeholder="Salary Range Start"/>
+                <Entry x:Name="salaryEnd_entry" Placeholder="Salary Range End"/>
+                <Entry x:Name="workingDays_entry" Placeholder="Working Days"/>
+                <Entry x:Name="workingHoursStart_entry" Placeholder="Working Hours Start"/>
+                <Entry x:Name="workingHoursEnd_entry" Placeholder="Working Hours End"/>
+
+                <DatePicker x:Name="expiryStart_entry"/>
+                <DatePicker x:Name="expiryEnd_entry"/>
+
+                <Entry x:Name="category_entry" Placeholder="Category"/>
+                <Picker x:Name="category_picker" >
+
+                </Picker>
+
+                <Entry x:Name="responsibilities_entry" Placeholder="Responsibilities"/>
+
+
+                <Button Text="Add" Clicked="AddAnnoucementClick" 
+                          HorizontalOptions="Center" 
+                          BorderColor="Black"
+                          BorderWidth="1.5"
+                          CornerRadius="50"
+                          TextColor="Black"
+                          BackgroundColor="Transparent"
+                          VerticalOptions="Center"/>
+
+                <Button Text="Back" Clicked="BackToPreviousPage" 
+                          HorizontalOptions="Center" 
+                          BorderColor="Black"
+                          BorderWidth="1.5"
+                          CornerRadius="50"
+                          TextColor="Black"
+                          BackgroundColor="Transparent"
+                          VerticalOptions="Center"/>        
+            </StackLayout>
+        </ScrollView>
+
+    </ContentPage.Content>
+</ContentPage>

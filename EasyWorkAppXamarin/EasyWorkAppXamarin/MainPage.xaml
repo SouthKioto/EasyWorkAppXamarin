@@ -4,23 +4,79 @@
              x:Class="EasyWorkAppXamarin.MainPage"
              NavigationPage.HasNavigationBar="False">
 
-    <StackLayout>
+    <StackLayout Margin="15">
 
         <StackLayout Orientation="Horizontal">
-            <Image x:Name="EasyWorkLogo" Source="EasyWorkLogo.jpg" WidthRequest="100" HorizontalOptions="CenterAndExpand"/>
+            <Image x:Name="EasyWorkLogo" Source="EasyWorkLogo.jpg" WidthRequest="50" HorizontalOptions="StartAndExpand"/>
 
             <Grid x:Name="UserData"></Grid>
         </StackLayout>
-        <StackLayout>
-            <Label Text="Find Your Creative Job" TextColor="Black" FontSize="40" FontAttributes="Bold" Margin="15"/>
-            <Label x:Name="UserGreetings" Margin="15" TextColor="Black" FontAttributes="Bold"/>
+        <StackLayout Margin="0,50,0,0">
+            <Label x:Name="UserGreetings" TextColor="Black" FontAttributes="Bold"/>
 
-            <StackLayout Orientation="Horizontal">
-                <SearchBar/>
-                <ImageButton WidthRequest="50" BackgroundColor="Black"/>
+            <StackLayout Spacing="-20">
+                <Label Text="Find Your" FontSize="40" FontAttributes="Bold" TextColor="Black" />
+                <Label Text="Creative Job" FontSize="40" FontAttributes="Bold" TextColor="Black" />
             </StackLayout>
+        </StackLayout>
 
+        <StackLayout Margin="0,50,0,0">
+            <Label HorizontalOptions="Center">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Najnowsze oferty                                                 " TextColor="Black"/>
+                        <Span Text="Zobacz więcej" TextColor="Black" FontAttributes="Bold" TextDecorations="Underline"/>
+                    </FormattedString>
+                </Label.FormattedText>
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="GoToSearchPage"/>
+                </Label.GestureRecognizers>
+            </Label>
 
+            <CarouselView x:Name="AllAnnoucementsList_MainPage">
+                <CarouselView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout>
+                            <Frame HeightRequest="280" WidthRequest="180"
+                                   BackgroundColor="White" Padding="0"
+                                   HasShadow="True" Margin="0,10,0,0" CornerRadius="10"
+                                   HorizontalOptions="CenterAndExpand">
+                                <Grid>
+                                    <StackLayout>
+                                        <Image Source="Annoucement.png"  
+                                           HeightRequest="300"
+                                           Opacity="0.6"
+                                           Aspect="AspectFill"/>
+                                    </StackLayout>
+                                    <StackLayout Margin="0,0,0,10">
+                                        <Label Text="{Binding Notification_title}" VerticalOptions="StartAndExpand"
+                                           HeightRequest="50"
+                                           Margin="10,0"
+                                           FontAttributes="Bold"
+                                           FontSize="18"
+                                           TextColor="Black"/>
+                                        <Label Text="{Binding Notification_descript}"
+                                               Margin="10,0"
+                                               TextColor="Black"
+                                               FontAttributes="Bold"/>
+
+                                        <Label Margin="10,0">
+                                            <Label.FormattedText>
+                                                <FormattedString>
+                                                    <Span Text="Szczegóły" TextColor="Black" FontAttributes="Bold" TextDecorations="Underline"/>
+                                                </FormattedString>
+                                            </Label.FormattedText>
+                                            <Label.GestureRecognizers>
+                                                <TapGestureRecognizer Tapped="GoToDetailsPage"/>
+                                            </Label.GestureRecognizers>
+                                        </Label>
+                                    </StackLayout>
+                                </Grid>
+                            </Frame>
+                        </StackLayout>
+                    </DataTemplate>
+                </CarouselView.ItemTemplate>
+            </CarouselView>
         </StackLayout>
     </StackLayout>
 

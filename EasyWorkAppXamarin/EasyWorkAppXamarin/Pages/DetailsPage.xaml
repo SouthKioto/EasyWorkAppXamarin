@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EasyWorkAppXamarin.Pages.DetailsPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label x:Name="Title_label"
+                   HorizontalOptions="CenterAndExpand"
+                   TextColor="Black"
+                   FontAttributes="Bold"/>
+
+            <Label x:Name="Descript_label"
+                   HorizontalOptions="CenterAndExpand"
+                   TextColor="Black"
+                   FontAttributes="Bold"/>
+
+            <Label x:Name="WorkPosition_label"
+                   HorizontalOptions="CenterAndExpand"
+                   TextColor="Black"
+                   FontAttributes="Bold"/>
+
+            <Label x:Name="JobLevel_label"
+                   HorizontalOptions="CenterAndExpand"
+                   TextColor="Black"
+                   FontAttributes="Bold"/>
+
+            <Label x:Name="ContractType_label"
+                   HorizontalOptions="CenterAndExpand"
+                   TextColor="Black"
+                   FontAttributes="Bold"/>
+
+            <Label x:Name="EmploymentDimen_label"
+                   HorizontalOptions="CenterAndExpand"
+                   TextColor="Black"
+                   FontAttributes="Bold"/>
+
+            <Label x:Name="WorkType_label"
+                   HorizontalOptions="CenterAndExpand"
+                   TextColor="Black"
+                   FontAttributes="Bold"/>
+
+            <Label x:Name="SalaryRange_label"
+                   HorizontalOptions="CenterAndExpand"
+                   TextColor="Black"
+                   FontAttributes="Bold"/>
+
+            <Label x:Name="WorkingDays_label"
+                   HorizontalOptions="CenterAndExpand"
+                   TextColor="Black"
+                   FontAttributes="Bold"/>
+
+            <Label x:Name="WorkingHours_label"
+                   HorizontalOptions="CenterAndExpand"
+                   TextColor="Black"
+                   FontAttributes="Bold"/>
+
+            <Label x:Name="DateOfExpiryEnd_label"
+                   HorizontalOptions="CenterAndExpand"
+                   TextColor="Black"
+                   FontAttributes="Bold"/>
+
+            <Label x:Name="Category_label"
+                   HorizontalOptions="CenterAndExpand"
+                   TextColor="Black"
+                   FontAttributes="Bold"/>
+
+            <Label x:Name="Responsibilities_label"
+                   HorizontalOptions="CenterAndExpand"
+                   TextColor="Black"
+                   FontAttributes="Bold"/>
+
+            <Label x:Name="User_label"
+                   HorizontalOptions="CenterAndExpand"
+                   TextColor="Black"
+                   FontAttributes="Bold"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
